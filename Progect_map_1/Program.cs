@@ -36,7 +36,7 @@ namespace Progect_map_1
             for (int i=0;i<=_step;i++)
             {
                 
-                temp_list.Add(new POint() { name_point="Point_name_"+i, lon= random.NextDouble(),lng= random.NextDouble(), });
+                temp_list.Add(new POint() { id_point=i, name_point="Point_name_"+i, lon= random.NextDouble(),lng= random.NextDouble(), });
                 //Thread.Sleep(1);
             }
             return temp_list;
@@ -76,10 +76,19 @@ namespace Progect_map_1
                 Console.WriteLine("Name:{0} | {1}; {2}", point.name_point, point.lon, point.lng);
             }
         }
+
+        static List<POint> Line_points(List<POint> _points)
+        {
+
+            return null;
+        }
+
     }
     class POint{
+        public int id_point { get; set; }
         public double lon { get; set; }
         public double lng { get; set; }
         public string name_point { get; set; }
+        public List<int> line_points { get; set; }
     }
 }
